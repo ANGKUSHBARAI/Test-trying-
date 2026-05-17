@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>English App</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#e0f2fe,#f4f7fb);
+}
+
+/* LOGIN PAGE */
+#loginPage{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.loginBox{
+  background:white;
+  padding:30px;
+  width:300px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  text-align:center;
+}
+
+.loginBox h2{
+  margin-bottom:20px;
+  color:#1e3a8a;
+}
+
+input{
+  width:90%;
+  padding:10px;
+  margin:8px 0;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+button:hover{
+  background:#1e3a8a;
+}
+
+/* HOME PAGE */
+#homePage{
+  display:none;
+  text-align:center;
+  padding-top:80px;
+}
+
+.nav{
+  background:#2563eb;
+  color:white;
+  padding:15px;
+  font-size:20px;
+}
+
+.card{
+  margin-top:40px;
+  background:white;
+  width:80%;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage">
+  <div class="loginBox">
+    <h2>Login</h2>
+    <input type="text" id="user" placeholder="Enter Name">
+    <input type="password" id="pass" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="homePage">
+
+  <div class="nav">
+    English Learning App
+  </div>
+
+  <div class="card">
+    <h1>Welcome 🎉</h1>
+    <p>You are successfully logged in.</p>
+    <p>Start learning English vocabulary, grammar and practice tests.</p>
+  </div>
+
+</div>
+
+<script>
+function login(){
+  let user = document.getElementById("user").value;
+  let pass = document.getElementById("pass").value;
+
+  if(user !== "" && pass !== ""){
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("homePage").style.display = "block";
+  } else {
+    alert("Please fill all fields");
+  }
+}
+</script>
+
+
+</body>
+</html>
